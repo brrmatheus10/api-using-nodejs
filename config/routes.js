@@ -16,9 +16,8 @@ routes.post('/add', (req, res) => {
     const body = req.body
     if (!body)
         return res.status(400).end()
-
-    testDatabase.push(body)
-    return res.json(body)
+    else
+        return "Error 404"
 })
 
 routes.delete('/:id', (req, res) => {
@@ -35,7 +34,7 @@ routes.delete('/:id', (req, res) => {
 })
 
 //routes.update('/update', (req, seq) => {
-    
+
 //}))
 
 
