@@ -16,5 +16,5 @@ app.use(routes)
 
 //Vai ouvir essa aplicação na porta 8080
 app.listen(3000, () => {
-    console.log('Hello World')
+    console.log('Started')
 })

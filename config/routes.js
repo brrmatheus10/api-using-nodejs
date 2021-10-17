@@ -14,10 +14,18 @@ routes.get('/', (req, res) => {
 
 routes.post('/add', (req, res) => {
     const body = req.body
-    if (!body)
-        return res.status(400).end()
-    else
-        return "Error 404"
+    const id = req.body.id
+
+    testDatabase.forEach(testDatabase => {
+        if (testDatabase.id == id) {
+            console.log("Id igual")
+        }
+
+    });
+
+    testDatabase.push(body)
+    return res.send(testDatabase)
+
 })
 
 routes.delete('/:id', (req, res) => {
@@ -33,9 +41,6 @@ routes.delete('/:id', (req, res) => {
     return res.send(dbfilter)
 })
 
-//routes.update('/update', (req, seq) => {
-
-//}))
 
 
 module.exports = routes
